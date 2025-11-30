@@ -1,4 +1,4 @@
-package main.java.enumns;
+package main.java.enums;
 
 public enum Frequencia {
     DIARIA,
