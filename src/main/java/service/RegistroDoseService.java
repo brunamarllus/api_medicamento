@@ -9,19 +9,22 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
-public class RegistroDoseService {
+public class RegistroDoseService implements CrudService<RegistroDose> {
 
     private final List<RegistroDose> registros = new ArrayList<>();
     private final AtomicInteger idGenerator = new AtomicInteger(1);
 
+    @Override
     public List<RegistroDose> findAll() {
         return new ArrayList<>(registros);
     }
 
+    @Override
     public Optional<RegistroDose> findById(int id) {
         return registros.stream().filter(r -> r.getId() != null && r.getId().equals(id)).findFirst();
     }
 
+    @Override
     public RegistroDose create(RegistroDose registro) {
         if (registro.getId() == null || registro.getId() == 0) {
             registro.setId(idGenerator.getAndIncrement());
@@ -30,6 +33,7 @@ public class RegistroDoseService {
         return registro;
     }
 
+    @Override
     public boolean delete(int id) {
         return registros.removeIf(r -> r.getId() != null && r.getId().equals(id));
     }
