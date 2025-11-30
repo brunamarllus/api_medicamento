@@ -1,18 +1,18 @@
-package model;
+package main.java.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class RegistroDose {
 
-    private int id;
-    private int idAgenda;
+    private Integer id;
+    private Integer idAgenda;
     private LocalDate data;
     private LocalTime horario;
     private boolean tomada;
     private String observacao;
 
-    public RegistroDose(int id, int idAgenda, LocalDate data, LocalTime horario, boolean tomada, String observacao) {
+    public RegistroDose(Integer id, Integer idAgenda, LocalDate data, LocalTime horario, boolean tomada, String observacao) {
         this.id = id;
         this.idAgenda = idAgenda;
         this.data = data;
@@ -23,19 +23,19 @@ public class RegistroDose {
 
     public RegistroDose() {}
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getIdAgenda() {
+    public Integer getIdAgenda() {
         return idAgenda;
     }
 
-    public void setIdAgenda(int idAgenda) {
+    public void setIdAgenda(Integer idAgenda) {
         this.idAgenda = idAgenda;
     }
 
